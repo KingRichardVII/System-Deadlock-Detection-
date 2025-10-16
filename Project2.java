@@ -50,9 +50,39 @@ public class Project2 {
 		}
 		
 		//main loop
-		//FIXME: C/P from project one, could literally use main loop
-		//Change menu choices and method calls in case statement
-		//case 1 = print relation, case 2 = change relation, so on and so forth
+		int option = 0; //Any value other than 4 (4 ends the program
+		while (option !=4) {
+			System.out.println();
+			System.out.println("1) Print the hiearchy from table");
+			System.out.println("2) Add a child process to hierarchy");
+			System.out.println("3) Remove a process's descendants from the hierarchy");
+			System.out.println("4) Quit the program");
+			System.out.println("Enter Selection"); //case for invalid option, loop repeats harmlessly
+			if (input.hasNextInt()) {//data type check
+				option = input.nextInt();
+			}else {
+				option = 0; // any value other than 1,2,3,4
+			}
+			input.nextLine(); //input flushing
+			switch (option) {
+				case 1:
+					printHiearchy();
+					break;
+				case 2:
+					addProcess();
+					break;
+				case 3: 
+					removeProcess();
+					break;
+				case 4: 
+					System.out.println("Goodbye");
+					break;
+				default:
+					System.out.println("Invalid option, try again");
+			}//End of Switch Statement
+		}//end of main loop
+	}//end of main method
+
 	}//end of main method
 	
 	/************
@@ -70,13 +100,13 @@ public class Project2 {
 			System.out.print("p" + i);
 			for (int j = 0; j < process[0].getResourceLength(); j++){
 				System.out.print("\t");
-				if (process i ){ //FIXME finish parameter
-				System.out.print(process[i].getResource(j))
+				if (process [i].getResource(j) != 0){
+				System.out.print(process[i].getResource(j));
 				}
 			} 
 			System.out.println();
 		}
-	}//end of print relations
+	}// end of Print relations
 	
 	public static void changeRelation(){
 	System.out.println("Print relations"); //FIXME delete
