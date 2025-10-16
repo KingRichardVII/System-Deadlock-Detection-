@@ -17,16 +17,38 @@ public class Project2 {
 	//main method
 	public static void main(String[] args) {
 		//enter number of processes
-		//FIXME:copy paste code from project 1, change points of instruction
+		System.out.println("Enter the number of processes: ");
+		if (!input.hasNextInt()){ //Date type check
+			System.out.println("Invalid input.");
+			System.exit(0);
+		}
+		int processes = input.nextInt();
+		input.nextLine(); //Input flushing
+		if (processes <= 0) { //Valid data check
+			System.out.println("Invalid number of processes");
+			System.exit(0);
 		
+		}
 		//enter the number of resources
-		//FIXME C/P from P1
+		System.out.println("Enter the number of resources: ");
+		if (!input.hasNextInt()) { //Data Type Check
+			System.out.println("Invalid input.");
+			System.exit(0);
+		}
+		int resources = input.nextInt();
+		input.nextLine();//input flush
+		if (resources <= 0) { //Valid data check
+			System.out.println("Invalid number of resources.");
+			System.exit(0);
+		
+		}
 		
 		//Create the process-to-resource relations
 		process = new Relation[processes]; //array
 		for(int i = 0; i < process.length; i++){ 
 			process[i] = new Relation(resources); //individual object
 		}
+		
 		//main loop
 		//FIXME: C/P from project one, could literally use main loop
 		//Change menu choices and method calls in case statement
