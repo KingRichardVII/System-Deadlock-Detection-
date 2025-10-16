@@ -50,12 +50,12 @@ public class Project2 {
 		}
 		
 		//main loop
-		int option = 0; //Any value other than 4 (4 ends the program
+		int option = 0; //Any value other than 4 (4 ends the program)
 		while (option !=4) {
 			System.out.println();
-			System.out.println("1) Print the hiearchy from table");
-			System.out.println("2) Add a child process to hierarchy");
-			System.out.println("3) Remove a process's descendants from the hierarchy");
+			System.out.println("1) Print the process-to-process relations");
+			System.out.println("2) Change a process-to-resource relation");
+			System.out.println("3) Detect the system for deadlock");
 			System.out.println("4) Quit the program");
 			System.out.println("Enter Selection"); //case for invalid option, loop repeats harmlessly
 			if (input.hasNextInt()) {//data type check
@@ -66,13 +66,13 @@ public class Project2 {
 			input.nextLine(); //input flushing
 			switch (option) {
 				case 1:
-					printHiearchy();
+					printRelations();
 					break;
 				case 2:
-					addProcess();
+					changeRelation();
 					break;
 				case 3: 
-					removeProcess();
+					detectDeadlock();
 					break;
 				case 4: 
 					System.out.println("Goodbye");
@@ -81,8 +81,6 @@ public class Project2 {
 					System.out.println("Invalid option, try again");
 			}//End of Switch Statement
 		}//end of main loop
-	}//end of main method
-
 	}//end of main method
 	
 	/************
@@ -120,6 +118,6 @@ public class Project2 {
 	//Detect deadlock recursively
 	public static boolean detectDeadlockRecursively(int targetIndex, int currentIndex){
 	System.out.println("Print relations"); //FIXME delete
+	return false;
 	}//end of detect deadlock recursively
-	
 }// end of class 
