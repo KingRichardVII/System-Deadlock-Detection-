@@ -109,7 +109,6 @@ public class Project2 {
 	public static void changeRelation(){
 	//enter the process index 
 		System.out.println("Enter the process index: ");
-	//enter the resource index
 		if (!input.hasNextInt()){ //data type check
 		System.out.println("Invalid input. ");
 		input.nextLine(); //input flushing
@@ -122,8 +121,28 @@ public class Project2 {
 		return;
 	}
 	
+	//Enter resource index
+	System.out.println("Enter the resource index: ");
+		if (!input.hasNextInt()){ //data type check
+		System.out.println("Invalid input. ");
+		input.nextLine(); //input flushing
+		return;
+	}
+	int processIndex - input.nextInt();
+	input.nextLine(); //input flush
+	if(processIndex < 0 || processIndex >= process [processIndex].getResourceLength()){ //valid data check
+		System.out.println("Invalid process index. ");
+		return;
+	}
 	//enter new relation bw the process and resource
-	
+	System.out.println("Enter the new relation (0: None, 1: P requests R, 2: P allocated R)");
+	if (!input.hasNextInt()){ //data type check
+		System.out.println("Invalid input. ");
+		input.nextLine(); //input flushing
+		return;
+	}
+	int newRelation = input.nextInt();
+	input.nextLine(); // input flushing
 	//perform a different action based on the new realtion
 	
 	}//end of change relation
