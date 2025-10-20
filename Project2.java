@@ -1,5 +1,5 @@
 //Richard Phan
-// COMP 322 FALL 2025
+//COMP 322 FALL 2025
 //Project2
 
 import java.util.Scanner;
@@ -107,7 +107,25 @@ public class Project2 {
 	}// end of Print relations
 	
 	public static void changeRelation(){
-	System.out.println("Print relations"); //FIXME delete
+	//enter the process index 
+		System.out.println("Enter the process index: ");
+	//enter the resource index
+		if (!input.hasNextInt()){ //data type check
+		System.out.println("Invalid input. ");
+		input.nextLine(); //input flushing
+		return;
+	}
+	int processIndex - input.nextInt();
+	input.nextLine(); //input flush
+	if(processIndex < 0 || processIndex >= process.length){ //valid data check
+		System.out.println("Invalid process index. ");
+		return;
+	}
+	
+	//enter new relation bw the process and resource
+	
+	//perform a different action based on the new realtion
+	
 	}//end of change relation
 	
 	//detect deadlock
