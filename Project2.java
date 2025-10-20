@@ -144,7 +144,29 @@ public class Project2 {
 	int newRelation = input.nextInt();
 	input.nextLine(); // input flushing
 	//perform a different action based on the new realtion
-	
+	switch (newRelation) {
+		case EMPTY:
+			process[processIndex].setResourceLength(resourceIndex, EMPTY);
+			System.out.println("There is now no relation between process " + processIndex + " and resource " + resourceIndex + ".");
+			break;
+		case REQUEST:
+			process[processIndex].setResource(resourceIndex, REQUEST);
+			System.out.println("Process " + processIndex + " is now requesting to use " + "resource " + resourceIndex + ".");
+			break;
+		case ALLOCATE:
+			for (int i = 0; i < process.length; i++) {
+				if (i != processIndex && process[i].getResource(resourceIndex) == ALLOCATE) {
+					System.out.println("Process " + processIndex + " cannot be allocated " + "resource " + resourceIndex + " because process " i + " is using it." );
+					return;
+				}
+			}
+			
+			process[processIndex].setResource(resourceIndex, ALLOCATE);
+			System.out.println("Process " + processIndex + " has been allocated " + "resource " + resourceIndex + " for usage.");
+			break;
+		default:
+			System.out.println("Invalid relation value. ");
+	}
 	}//end of change relation
 	
 	//detect deadlock
