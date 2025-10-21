@@ -114,7 +114,7 @@ public class Project2 {
 		input.nextLine(); //input flushing
 		return;
 	}
-	int processIndex - input.nextInt();
+	int processIndex = input.nextInt();
 	input.nextLine(); //input flush
 	if(processIndex < 0 || processIndex >= process.length){ //valid data check
 		System.out.println("Invalid process index. ");
@@ -128,10 +128,10 @@ public class Project2 {
 		input.nextLine(); //input flushing
 		return;
 	}
-	int processIndex - input.nextInt();
+	int resourceIndex = input.nextInt();
 	input.nextLine(); //input flush
-	if(processIndex < 0 || processIndex >= process [processIndex].getResourceLength()){ //valid data check
-		System.out.println("Invalid process index. ");
+	if(resourceIndex < 0 || resourceIndex >= process [processIndex].getResourceLength()){ //valid data check
+		System.out.println("Invalid resource index. ");
 		return;
 	}
 	//enter new relation bw the process and resource
@@ -143,10 +143,10 @@ public class Project2 {
 	}
 	int newRelation = input.nextInt();
 	input.nextLine(); // input flushing
-	//perform a different action based on the new realtion
+	//perform a different action based on the new relation
 	switch (newRelation) {
 		case EMPTY:
-			process[processIndex].setResourceLength(resourceIndex, EMPTY);
+			process[processIndex].setResource(resourceIndex, EMPTY);
 			System.out.println("There is now no relation between process " + processIndex + " and resource " + resourceIndex + ".");
 			break;
 		case REQUEST:
@@ -156,17 +156,16 @@ public class Project2 {
 		case ALLOCATE:
 			for (int i = 0; i < process.length; i++) {
 				if (i != processIndex && process[i].getResource(resourceIndex) == ALLOCATE) {
-					System.out.println("Process " + processIndex + " cannot be allocated " + "resource " + resourceIndex + " because process " i + " is using it." );
+					System.out.println("Process " + processIndex + " cannot be allocated " + "resource " + resourceIndex + " because process " + i + " is using it." );
 					return;
 				}
 			}
-			
 			process[processIndex].setResource(resourceIndex, ALLOCATE);
 			System.out.println("Process " + processIndex + " has been allocated " + "resource " + resourceIndex + " for usage.");
 			break;
 		default:
 			System.out.println("Invalid relation value. ");
-	}
+	   }//end of switch statement
 	}//end of change relation
 	
 	//detect deadlock
