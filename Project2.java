@@ -128,10 +128,10 @@ public class Project2 {
 		input.nextLine(); //input flushing
 		return;
 	}
-	int processIndex = input.nextInt();
+	int resourceIndex = input.nextInt();
 	input.nextLine(); //input flush
-	if(processIndex < 0 || processIndex >= process.length){ //valid data check
-		System.out.println("Invalid process index. ");
+	if(resourceIndex < 0 || resourceIndex >= process[processIndex].getResourceLength()){ //valid data check //FIXMEEEEEEE
+		System.out.println("Invalid resource index. ");
 		return;
 	}
 	//enter new relation bw the process and resource
@@ -141,20 +141,12 @@ public class Project2 {
 		input.nextLine(); //input flushing
 		return;
 	}
-	int processIndex = input.nextInt();
-	input.nextLine(); // input flushing
-	if (processIndex < 0 || processIndex >= process.length) { //valid data check
-		System.out.println("Invalid process index. );
-		return
-	}
-	//Enter the resource index 
-	
 	int newRelation = input.nextInt();
 	input.nextLine(); // input flushing
-	//perform a different action based on the new realtion
+	//perform a different action based on the new relation
 	switch (newRelation) {
 		case EMPTY:
-			process[processIndex].setResourceLength(resourceIndex, EMPTY);
+			process[processIndex].setResource(resourceIndex, EMPTY);
 			System.out.println("There is now no relation between process " + processIndex + " and resource " + resourceIndex + ".");
 			break;
 		case REQUEST:
@@ -173,7 +165,7 @@ public class Project2 {
 			break;
 		default:
 			System.out.println("Invalid relation value. ");
-	}
+		}//end of switch statement
 	}//end of change relation
 	
 	//detect deadlock
@@ -183,7 +175,7 @@ public class Project2 {
 			for (int j = 0; j < process[0].getResourceLength(); j++) {
 				if (process[i].getResource(j) == ALLOCATE) {
 					//perform an additional for loop if an allocation is detected
-					for (k = 0; k < process.length; k++) {
+					for (int k = 0; k < process.length; k++) {
 						if (process[k].getResource(j) == REQUEST) {
 							//run recursive method if a request is detected
 							if (detectDeadlockRecursively(i,k)) {
@@ -205,7 +197,31 @@ public class Project2 {
 	
 	//Detect deadlock recursively
 	public static boolean detectDeadlockRecursively(int targetIndex, int currentIndex){
-	System.out.println("Print relations"); //FIXME delete
-	return false;
+		//Check all process to resource relatins for directed cycle of dependencies
+		for (int j = 0; j < process[currentIndex].getResourceLength(); j++) {
+			if (process[currentIndex].getResource(j) == ALLOCATE) {
+					//perform an additional for loop if an allocation is detected
+					for (int k = 0; k < process.length; k++) {
+						if (process[k].getResource(j) == REQUEST) {
+							//perform additional evaluations if a request is detected
+							if (k == targetIndex) { //source of deadlock
+							//deadlock detected - print the request and allocation
+								System.out.println("The system is deadlocked due to the following relations:");
+								System.out.println("Process" + k + "is requesting resource " + j + ".");
+								System.out.println("Process" + currentIndex + "is allocated resource " + j + ".");
+								return true;
+							} else if (detectDeadlockRecursively(targetIndex, k)) {
+							//deadlock detected - print the request and allocation
+								System.out.println("Backtrack:");
+								System.out.println("Process" + k + "is requesting resource " + j + ".");
+								System.out.println("Process" + currentIndex + "is allocated resource " + j + ".");
+								return true;
+							}
+						}//end of request check
+				}//end of second loop
+			}//end of allocate check
+		}// end of first loop
+		//return false if all relation comparisons are exhausted
+		return false;
 	}//end of detect deadlock recursively
 }// end of class 
