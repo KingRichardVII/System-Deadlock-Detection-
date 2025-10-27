@@ -128,10 +128,10 @@ public class Project2 {
 		input.nextLine(); //input flushing
 		return;
 	}
-	int resourceIndex = input.nextInt();
+	int processIndex = input.nextInt();
 	input.nextLine(); //input flush
-	if(resourceIndex < 0 || resourceIndex >= process [processIndex].getResourceLength()){ //valid data check
-		System.out.println("Invalid resource index. ");
+	if(processIndex < 0 || processIndex >= process.length){ //valid data check
+		System.out.println("Invalid process index. ");
 		return;
 	}
 	//enter new relation bw the process and resource
@@ -141,12 +141,20 @@ public class Project2 {
 		input.nextLine(); //input flushing
 		return;
 	}
+	int processIndex = input.nextInt();
+	input.nextLine(); // input flushing
+	if (processIndex < 0 || processIndex >= process.length) { //valid data check
+		System.out.println("Invalid process index. );
+		return
+	}
+	//Enter the resource index 
+	
 	int newRelation = input.nextInt();
 	input.nextLine(); // input flushing
-	//perform a different action based on the new relation
+	//perform a different action based on the new realtion
 	switch (newRelation) {
 		case EMPTY:
-			process[processIndex].setResource(resourceIndex, EMPTY);
+			process[processIndex].setResourceLength(resourceIndex, EMPTY);
 			System.out.println("There is now no relation between process " + processIndex + " and resource " + resourceIndex + ".");
 			break;
 		case REQUEST:
@@ -165,12 +173,34 @@ public class Project2 {
 			break;
 		default:
 			System.out.println("Invalid relation value. ");
-	   }//end of switch statement
+	}
 	}//end of change relation
 	
 	//detect deadlock
 	public static void detectDeadlock(){
-	System.out.println("Print relations");//FIXME delete
+		//Check all process to resource relatins for directed cycle of dependencies
+		for(int i = 0; i < process.length; i++) {
+			for (int j = 0; j < process[0].getResourceLength(); j++) {
+				if (process[i].getResource(j) == ALLOCATE) {
+					//perform an additional for loop if an allocation is detected
+					for (k = 0; k < process.length; k++) {
+						if (process[k].getResource(j) == REQUEST) {
+							//run recursive method if a request is detected
+							if (detectDeadlockRecursively(i,k)) {
+								//deadlock detected - print the request and allocation
+								System.out.println("Base:");
+								System.out.println("Process" + k + "is requesting resource " + j + ".");
+								System.out.println("Process" + i + "is allocated resource " + j + ".");
+								return;
+							}
+						}//end of request check
+					}//end of third loop
+				}//end of allocation check
+			}//end of second loop
+		}//end of first loop
+	
+		//no deadlocks exist if all relation comparisons are exhaused
+		System.out.println("The system is not deadlocked, and is currently safe. "); //success scenario
 	}//end of detect deadlock
 	
 	//Detect deadlock recursively
