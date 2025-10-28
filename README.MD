@@ -52,6 +52,7 @@ Exits gracefully with a goodbye message.
 ### Sample Output
 
 ```markdown
-[View the full sample output](https://github.com/username/repo-name/blob/main/sample_output.txt)
+https://github.com/KingRichardVII/System-Deadlock-Detection-/blob/main/project2_sample_output.txt
+
 
 
