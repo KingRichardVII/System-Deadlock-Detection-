@@ -1,0 +1,575 @@
+//Sample output for Project2.java
+//Richard Phan
+//==========================================
+Enter the number of processes:
+5
+Enter the number of resources:
+3
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+0
+Invalid option, try again.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+5
+Invalid option, try again.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+Hello
+Invalid option, try again.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0                      
+p1                      
+p2                      
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+-1
+Invalid process index.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+5
+Invalid process index.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+Hello
+Invalid input.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+-1
+Invalid resource index.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+3
+Invalid resource index.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+Hello
+Invalid input.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+1
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+-1
+Invalid relation value.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+1
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+3
+Invalid relation value.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+1
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+Hello
+Invalid input.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+1
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+1
+Process 0 is now requesting to use resource 1.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0              1       
+p1                      
+p2                      
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+2
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+1
+Process 0 is now requesting to use resource 2.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0              1       1
+p1                      
+p2                      
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+1
+Enter the resource index:
+1
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+1
+Process 1 is now requesting to use resource 1.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0              1       1
+p1              1       
+p2                      
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+1
+Enter the resource index:
+2
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+2
+Process 1 has been allocated resource 2 for usage.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0              1       1
+p1              1       2
+p2                      
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+3
+The system is not deadlocked, and is currently safe.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+2
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+2
+Process 0 cannot be allocated resource 2 because process 1 is using it.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0              1       1
+p1              1       2
+p2                      
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+1
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+0
+There is now no relation between process 0 and resource 1.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0                      1
+p1              1       2
+p2                      
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+1
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+2
+Process 0 has been allocated resource 1 for usage.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0              2       1
+p1              1       2
+p2                      
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+3
+The system is deadlocked due to the following relations:
+Process 0 is requesting resource 2.
+Process 1 is allocated resource 2.
+Base:
+Process 1 is requesting resource 1.
+Process 0 is allocated resource 1.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+1
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+0
+There is now no relation between process 0 and resource 1.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0                      1
+p1              1       2
+p2                      
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+1
+Enter the resource index:
+2
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+1
+Process 1 is now requesting to use resource 2.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0                      1
+p1              1       1
+p2                      
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+2
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+2
+Process 0 has been allocated resource 2 for usage.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0                      2
+p1              1       1
+p2                      
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+1
+Enter the resource index:
+1
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+2
+Process 1 has been allocated resource 1 for usage.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0                      2
+p1              2       1
+p2                      
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+2
+Enter the resource index:
+1
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+1
+Process 2 is now requesting to use resource 1.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0                      2
+p1              2       1
+p2              1       
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+2
+Enter the resource index:
+0
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+2
+Process 2 has been allocated resource 0 for usage.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0                      2
+p1              2       1
+p2      2       1       
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+2
+Enter the process index:
+0
+Enter the resource index:
+0
+Enter the new relation (0: None, 1: P requests R, 2: P allocated R):
+1
+Process 0 is now requesting to use resource 0.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+1
+        r0      r1      r2
+p0      1               2
+p1              2       1
+p2      2       1       
+p3                      
+p4                      
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+3
+The system is deadlocked due to the following relations:
+Process 0 is requesting resource 0.
+Process 2 is allocated resource 0.
+Backtrack:
+Process 2 is requesting resource 1.
+Process 1 is allocated resource 1.
+Base:
+Process 1 is requesting resource 2.
+Process 0 is allocated resource 2.
+
+1) Print the process-to-resource relations
+2) Change a process-to-resource relation
+3) Detect the system for deadlock
+4) Quit the program
+Enter selection:
+4
+Goodbye.
