@@ -1,6 +1,6 @@
 //Richard Phan
 //COMP 322 FALL 2025
-//Project2
+//Project 2
 
 import java.util.Scanner;
 
@@ -182,8 +182,8 @@ public class Project2 {
 							if (detectDeadlockRecursively(i,k)) {
 								//deadlock detected - print the request and allocation
 								System.out.println("Base:");
-								System.out.println("Process" + k + " is requesting resource " + j + ".");
-								System.out.println("Process" + i + " is allocated resource " + j + ".");
+								System.out.println("Process " + k + " is requesting resource " + j + ".");
+								System.out.println("Process " + i + " is allocated resource " + j + ".");
 								return;
 							}
 						}//end of request check
@@ -208,14 +208,14 @@ public class Project2 {
 							if (k == targetIndex) { //source of deadlock
 							//deadlock detected - print the request and allocation
 								System.out.println("The system is deadlocked due to the following relations:");
-								System.out.println("Process" + k + " is requesting resource " + j + ".");
-								System.out.println("Process" + currentIndex + " is allocated resource " + j + ".");
+								System.out.println("Process " + k + " is requesting resource " + j + ".");
+								System.out.println("Process " + currentIndex + " is allocated resource " + j + ".");
 								return true;
 							} else if (detectDeadlockRecursively(targetIndex, k)) {
 							//deadlock detected - print the request and allocation
 								System.out.println("Backtrack:");
-								System.out.println("Process" + k + " is requesting resource " + j + ".");
-								System.out.println("Process" + currentIndex + " is allocated resource " + j + ".");
+								System.out.println("Process " + k + " is requesting resource " + j + ".");
+								System.out.println("Process " + currentIndex + " is allocated resource " + j + ".");
 								return true;
 							}
 						}//end of request check
